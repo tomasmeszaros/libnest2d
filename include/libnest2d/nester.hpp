@@ -317,7 +317,7 @@ public:
 
     inline void rotation(Radians rot) BP2D_NOEXCEPT
     {
-        if(rotation_ != rot) {
+        if(static_cast<double>(rotation_) != static_cast<double>(rot)) {
             rotation_ = rot; has_rotation_ = true; tr_cache_valid_ = false;
             rmt_valid_ = false; lmb_valid_ = false;
             bb_cache_.valid = false;
